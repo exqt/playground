@@ -26,7 +26,7 @@ document.ondrop = (e) => {
   if (currentScene) {
     let dt = e.dataTransfer
     let file = dt.files[0]
-    currentScene.onDrop(file)
+    if (file) currentScene.onDrop(file)
   }
 }
 
@@ -37,10 +37,10 @@ for(let [name, cls] of Object.entries(scenes)) {
   sceneSelect.append(opt)
 }
 
-///
+//
 let urlParams = new URLSearchParams(window.location.search)
 let initScene = urlParams.get('scene')
-if (!loadScene(initScene)) console.log(loadScene("colorTriangle"))
+if (!loadScene(initScene)) loadScene("colorTriangle")
 
 // update
 let start;
