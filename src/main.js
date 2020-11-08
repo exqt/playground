@@ -1,9 +1,11 @@
 import ColorTriangleScene from "./scenes/colorTriangle"
 import PixelSortScene from "./scenes/pixelSort"
+import Cube3dScene from "./scenes/cube3d"
 
 const scenes = {
   colorTriangle: ColorTriangleScene,
   pixelSort: PixelSortScene,
+  cube3d: Cube3dScene,
 }
 
 let currentScene = null
