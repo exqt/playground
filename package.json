@@ -19,6 +19,7 @@
   "dependencies": {
     "@rollup/plugin-image": "^2.0.5",
     "@rollup/plugin-url": "^5.0.1",
-    "gl-matrix": "^3.3.0"
+    "gl-matrix": "^3.3.0",
+    "three": "^0.122.0"
   }
 }
