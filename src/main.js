@@ -2,12 +2,14 @@ import ColorTriangleScene from "./scenes/colorTriangle"
 import PixelSortScene from "./scenes/pixelSort"
 import Cube3dScene from "./scenes/cube3d"
 import ThreejsTest  from "./scenes/threejsTest"
+import VRHandScene from "./scenes/vrHand"
 
 const scenes = {
   colorTriangle: ColorTriangleScene,
   pixelSort: PixelSortScene,
   cube3d: Cube3dScene,
   threejsTest: ThreejsTest,
+  vrHand: VRHandScene
 }
 
 let currentScene = null
