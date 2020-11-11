@@ -32,8 +32,7 @@ class ThreejsTest extends Scene {
     
     this.enableVR()
     this.renderer.setAnimationLoop((time) => {
-      this.time = time/1000
-      this.update(0)
+      this.update(time)
     })
   }
 
