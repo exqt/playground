@@ -152,7 +152,7 @@ class PixelSortScene extends Scene {
     gl.bindTexture(gl.TEXTURE_2D, this.originalImageTexture);
   }
   
-  update(dt) {
+  update() {
     if(!this.originalImageTexture) return
     let gl = this.canvas.getContext("webgl")
 

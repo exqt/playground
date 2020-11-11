@@ -25,8 +25,6 @@ void main() {
 class ColorTriangleScene extends Scene {
   constructor() {
     super("color-triangle", 400, 400)
-    
-    this.time = 0
 
     let gl = this.canvas.getContext("webgl")
     this.program = shaderUtil.initShaderProgram(gl, vsSource, fsSource);
@@ -67,8 +65,8 @@ class ColorTriangleScene extends Scene {
     }
   }
 
-  update(dt) {
-    this.time = this.time + dt
+  update(time) {
+    this.time = time / 1000
 
     let gl = this.canvas.getContext("webgl")
     
@@ -78,9 +76,9 @@ class ColorTriangleScene extends Scene {
     gl.uniformMatrix2fv(this.location.mat, false, new Float32Array([
       Math.cos(this.time), Math.sin(this.time),
       -Math.sin(this.time), Math.cos(this.time)
-    ]));
+    ]))
  
-    gl.drawArrays(gl.TRIANGLES, 0, 3);
+    gl.drawArrays(gl.TRIANGLES, 0, 3)
   }
 }
 

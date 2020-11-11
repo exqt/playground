@@ -1,3 +1,5 @@
+import { VRButton } from 'three/examples/jsm/webxr/VRButton.js'
+
 class Scene {
   constructor(name, width, height) {
     this.name = name
@@ -12,6 +14,20 @@ class Scene {
   release() {
     let p = document.querySelector("#canvas-wrapper")
     while(p.hasChildNodes()) p.removeChild(p.lastChild)
+    this.disableVR()
+  }
+  
+  enableVR() {
+    this.renderer.xr.enabled = true
+    this.vrButton = document.querySelector("body").append(VRButton.createButton(this.renderer))
+    console.log(this.vrButton)
+  }
+  
+  disableVR() {
+    if (this.vrButton) {
+      this.renderer.xr.enabled = false
+      this.vrButton.remove()
+    }
   }
   
   onDrop(file) {
@@ -22,7 +38,7 @@ class Scene {
 
   }
   
-  update(dt) {
+  update(time) {
 
   }
 }

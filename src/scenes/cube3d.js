@@ -42,8 +42,6 @@ void main() {
 class Cube3dScene extends Scene {
   constructor() {
     super("cube3d", 400, 400)
-    
-    this.time = 0
 
     let gl = this.canvas.getContext("webgl")
     this.program = shaderUtil.initShaderProgram(gl, vsSource, fsSource);
@@ -142,8 +140,8 @@ class Cube3dScene extends Scene {
     }
   }
 
-  update(dt) {
-    this.time = this.time + dt
+  update(time) {
+    this.time = time / 1000
 
     let gl = this.canvas.getContext("webgl")
     

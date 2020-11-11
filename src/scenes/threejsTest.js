@@ -14,10 +14,10 @@ class ThreejsTest extends Scene {
     this.renderer.setSize(800, 600)
 
     const geometry = new THREE.BoxGeometry()
-    const material = new THREE.MeshPhongMaterial()
     
     for (let i = -2; i <= 2; i++) {
       for (let j = -2; j <= 2; j++) {
+        let material = new THREE.MeshPhongMaterial({color: Math.floor(Math.random()*0xffffff)})
         let cube = new THREE.Mesh( geometry, material )
         cube.position.x = i*2
         cube.position.z = j*2
@@ -29,10 +29,16 @@ class ThreejsTest extends Scene {
     this.scene.add(this.light)
 
     this.scene.add(new THREE.AmbientLight(0xffffff, 0.4))
+    
+    this.enableVR()
+    this.renderer.setAnimationLoop((time) => {
+      this.time = time/1000
+      this.update(0)
+    })
   }
 
-  update(dt) {
-    this.time += dt
+  update(time) {
+    this.time = time / 1000
 
     this.light.position.x = 2*Math.cos(this.time)
     this.light.position.y = 4

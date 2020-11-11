@@ -47,13 +47,8 @@ let initScene = urlParams.get('scene')
 if (!loadScene(initScene)) loadScene("colorTriangle")
 
 // update
-let start;
 const draw = (timestamp) => { 
-  if (start === undefined) start = timestamp
-  const dt = (timestamp - start)/1000
-
-  if (currentScene) currentScene.update(dt)
-  start = timestamp
+  if (currentScene) currentScene.update(timestamp)
   window.requestAnimationFrame(draw)
 }
 window.requestAnimationFrame(draw)
