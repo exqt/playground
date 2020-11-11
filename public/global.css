@@ -28,7 +28,7 @@ canvas {
   margin: 8px;
 }
 
-.overlay-wrapper {
+#overlay-wrapper {
   width: 100%;
   position: absolute;
   left: 0;
