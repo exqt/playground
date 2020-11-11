@@ -19,8 +19,8 @@ class Scene {
   
   enableVR() {
     this.renderer.xr.enabled = true
-    this.vrButton = document.querySelector("body").append(VRButton.createButton(this.renderer))
-    console.log(this.vrButton)
+    this.vrButton = VRButton.createButton(this.renderer)
+    document.querySelector("body").append(this.vrButton)
   }
   
   disableVR() {
